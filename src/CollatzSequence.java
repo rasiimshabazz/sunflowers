@@ -1,12 +1,13 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CollatzSequence {
 
     public static long getNumberWithMostSteps(List<Integer> numbers) {
-        HashMap<Long, Long> numberAndCount = new HashMap<>();
+        HashMap<Long, Long> numbersAndCounts = new HashMap<>();
 
-        numbers.stream().forEach(number -> {
-
+        for (Integer number : numbers) {
             long input = !((long) number <= 0 || (long) number > 1000000) ? (long) number : 0;
             long count = 0;
             while (input > 1) {
@@ -14,22 +15,16 @@ public class CollatzSequence {
                 else input = (3 * input) + 1;
                 count++;
             }
-            numberAndCount.put(Long.valueOf(number), count);
+            numbersAndCounts.put(Long.valueOf(number), count);
+        }
 
-        });
-
-        return maxUsingIteration(numberAndCount);
-    }
-
-    public static <K, V extends Comparable<V>> K maxUsingIteration(Map<K, V> map) {
-        Map.Entry<K, V> maxEntry = null;
-        for (Map.Entry<K, V> entry : map.entrySet()) {
-            if (maxEntry == null || entry.getValue()
-                    .compareTo(maxEntry.getValue()) > 0) {
-                maxEntry = entry;
+        Map.Entry<Long, Long> maxCountByNumber = null;
+        for (Map.Entry<Long, Long> entry : ((Map<Long, Long>) numbersAndCounts).entrySet()) {
+            if (maxCountByNumber == null || entry.getValue().compareTo(maxCountByNumber.getValue()) > 0) {
+                maxCountByNumber = entry;
             }
         }
-        return maxEntry.getKey();
+        return maxCountByNumber.getKey();
     }
 
 
