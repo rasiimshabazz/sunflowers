@@ -8,6 +8,12 @@ public abstract class Step {
         this.number = number;
     }
 
-    public abstract long run();
+    public long runEven() {
+        return this.number / 2;
+    }
+
+    public long runOdd() {
+        return (3 * this.number) + 1;
+    }
 
 }

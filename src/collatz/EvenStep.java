@@ -6,9 +6,4 @@ public class EvenStep extends Step {
         super(number);
     }
 
-    @Override
-    public long run() {
-        return this.number / 2;
-    }
-
 }

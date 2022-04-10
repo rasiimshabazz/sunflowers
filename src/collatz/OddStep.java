@@ -6,9 +6,5 @@ public class OddStep extends Step {
         super(number);
     }
 
-    @Override
-    public long run() {
-        return (3 * this.number) + 1;
-    }
 
 }

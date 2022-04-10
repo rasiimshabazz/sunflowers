@@ -20,12 +20,12 @@ public class CollatzSequence {
                 if (input % 2 == 0) {
                     Step step = new EvenStep(input);
                     steps1.add(step);
-                    input = step.run();
+                    input = step.runEven();
                 }
                 else {
                     Step step = new OddStep(input);
                     steps1.add(step);
-                    input = step.run();
+                    input = step.runOdd();
                 }
             }
             stepCounts.add(new StepCount(number, steps1.size()));
