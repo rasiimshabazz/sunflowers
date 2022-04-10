@@ -10,13 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CollatzSequenceTest {
 
     @Test
-    void run() {
-        assertEquals(3, CollatzSequence.getNumberWithMostSteps(Arrays.asList(1, 2, 3)));
-        assertEquals(837799, CollatzSequence.getNumberWithMostSteps(allNumbersUpToAMillion()));
-    }
-
-    private List<Integer> allNumbersUpToAMillion() {
-        return Arrays.stream(IntStream.range(1, 1000000).toArray()).boxed().collect(Collectors.toList());
+    void getNumberWithMostSteps() {
+        List<Integer> numbers = Arrays.stream(IntStream.range(1, 1000000).toArray())
+                .boxed().collect(Collectors.toList());
+        assertEquals(837799, CollatzSequence.getNumberWithMostSteps(numbers));
     }
 
 }
