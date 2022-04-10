@@ -1,5 +1,3 @@
-import collatz.Step;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -18,12 +16,12 @@ public class CollatzSequence {
                 if (input % 2 == 0) {
                     Step step = new Step(input);
                     steps1.add(step);
-                    input = step.runEven();
+                    input = input / 2;
                 }
                 else {
                     Step step = new Step(input);
                     steps1.add(step);
-                    input = step.runOdd();
+                    input = (3 * input) + 1;
                 }
             }
             stepCounts.add(new StepCount(number, steps1.size()));
@@ -45,5 +43,12 @@ public class CollatzSequence {
         }
     }
 
+    static class Step {
+        long number;
+        public Step(long number) {
+            this.number = number;
+        }
+
+    }
 
 }
