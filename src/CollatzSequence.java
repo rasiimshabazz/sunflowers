@@ -29,9 +29,9 @@ public class CollatzSequence {
         });
 
         StepCount stepCount = stepCounts.stream()
-                .max(Comparator.comparing(StepCount::getStepCount))
+                .max(Comparator.comparing(stepCount1 -> stepCount1.stepCount))
                 .orElseThrow(NoSuchElementException::new);
-        return stepCount.getNumber();
+        return stepCount.number;
     }
 
     static class StepCount {
@@ -43,12 +43,5 @@ public class CollatzSequence {
             this.stepCount = stepCount;
         }
 
-        public long getStepCount() {
-            return stepCount;
-        }
-
-        public long getNumber() {
-            return number;
-        }
     }
 }
