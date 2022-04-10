@@ -1,4 +1,3 @@
-import collatz.Collatz;
 import collatz.EvenStep;
 import collatz.OddStep;
 import collatz.Step;
@@ -45,6 +44,15 @@ public class CollatzSequence {
         public StepCount(long number, long stepCount) {
             this.number = number;
             this.stepCount = stepCount;
+        }
+    }
+
+    static class Collatz {
+
+        public final long number;
+
+        public Collatz(long number) {
+            this.number = number;
         }
 
     }
