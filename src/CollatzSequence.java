@@ -1,4 +1,5 @@
 import collatz.Collatz;
+import collatz.Step;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -10,7 +11,9 @@ public class CollatzSequence {
     public static long getNumberWithMostSteps(List<Integer> numbers) {
         List<StepCount> stepCounts = new ArrayList<>();
         numbers.stream().forEach(number -> {
-            long sequenceCount = Collatz.create(number).getSteps().size();
+            Collatz collatz = Collatz.create(number);
+            List<Step> steps = collatz.getSteps();
+            long sequenceCount = steps.size();
             stepCounts.add(new StepCount(number, sequenceCount));
         });
         StepCount stepCount = stepCounts.stream()
