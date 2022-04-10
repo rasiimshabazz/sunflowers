@@ -17,15 +17,16 @@ public class CollatzSequence {
             long input = !((long) number <= 0 || (long) number > 1000000) ? (long) number : 0;
             List<Step> steps1 = new ArrayList<>();
             while (input > 1) {
-                Step step;
                 if (input % 2 == 0) {
-                    step = new EvenStep(input);
+                    Step step = new EvenStep(input);
+                    steps1.add(step);
+                    input = step.run();
                 }
                 else {
-                    step = new OddStep(input);
+                    Step step = new OddStep(input);
+                    steps1.add(step);
+                    input = step.run();
                 }
-                steps1.add(step);
-                input = step.run();
             }
             stepCounts.add(new StepCount(number, steps1.size()));
         });
