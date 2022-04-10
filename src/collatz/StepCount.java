@@ -1,19 +1,19 @@
 package collatz;
 
 public class StepCount {
-    private int number;
-    private int stepCount;
+    private long number;
+    private long stepCount;
 
-    public StepCount(int number, int stepCount) {
+    public StepCount(long number, long stepCount) {
         this.number = number;
         this.stepCount = stepCount;
     }
 
-    public int getStepCount() {
+    public long getStepCount() {
         return stepCount;
     }
 
-    public int getNumber() {
+    public long getNumber() {
         return number;
     }
 }

@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Collatz {
 
-    private final int number;
+    private final long number;
 
-    Collatz(int number) {
+    Collatz(long number) {
         this.number = number;
     }
 
     public List<Step> getSteps() {
-        int input = this.number;
+        long input = this.number;
         List<Step> steps = new ArrayList<>();
         while (input > 1) {
             Step step = StepFactory.create(input);
