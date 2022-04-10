@@ -8,18 +8,18 @@ import java.util.NoSuchElementException;
 
 public class CollatzSequence {
 
-    public long getNumberWithMostSteps(List<Integer> numbers) {
+    public static long getNumberWithMostSteps(List<Integer> numbers) {
         return getMaxStepCount(getSequenceCounts(numbers)).getNumber();
     }
 
-    private StepCount getMaxStepCount(List<StepCount> stepCounts) {
+    private static StepCount getMaxStepCount(List<StepCount> stepCounts) {
         StepCount stepCount = stepCounts.stream()
                 .max(Comparator.comparing(StepCount::getStepCount))
                 .orElseThrow(NoSuchElementException::new);
         return stepCount;
     }
 
-    private List<StepCount> getSequenceCounts(List<Integer> numbers) {
+    private static List<StepCount> getSequenceCounts(List<Integer> numbers) {
         List<StepCount> stepCounts = new ArrayList<>();
         numbers.stream().forEach(number -> {
             int sequenceCount = CollatzCreator.create(number).getSteps().size();
