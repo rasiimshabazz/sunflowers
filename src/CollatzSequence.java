@@ -1,5 +1,3 @@
-import collatz.EvenStep;
-import collatz.OddStep;
 import collatz.Step;
 
 import java.util.ArrayList;
@@ -18,12 +16,12 @@ public class CollatzSequence {
             List<Step> steps1 = new ArrayList<>();
             while (input > 1) {
                 if (input % 2 == 0) {
-                    Step step = new EvenStep(input);
+                    Step step = new Step(input);
                     steps1.add(step);
                     input = step.runEven();
                 }
                 else {
-                    Step step = new OddStep(input);
+                    Step step = new Step(input);
                     steps1.add(step);
                     input = step.runOdd();
                 }

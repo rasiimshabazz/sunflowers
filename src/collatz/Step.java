@@ -1,10 +1,10 @@
 package collatz;
 
-public abstract class Step {
+public class Step {
 
     long number;
 
-    Step(long number) {
+    public Step(long number) {
         this.number = number;
     }
 
