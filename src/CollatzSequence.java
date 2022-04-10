@@ -14,13 +14,11 @@ public class CollatzSequence {
             List<Step> steps1 = new ArrayList<>();
             while (input > 1) {
                 if (input % 2 == 0) {
-                    Step step = new Step(input);
-                    steps1.add(step);
+                    steps1.add(new Step());
                     input = input / 2;
                 }
                 else {
-                    Step step = new Step(input);
-                    steps1.add(step);
+                    steps1.add(new Step());
                     input = (3 * input) + 1;
                 }
             }
@@ -43,12 +41,6 @@ public class CollatzSequence {
         }
     }
 
-    static class Step {
-        long number;
-        public Step(long number) {
-            this.number = number;
-        }
-
-    }
+    static class Step { }
 
 }
