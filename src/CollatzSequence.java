@@ -12,8 +12,18 @@ public class CollatzSequence {
         List<StepCount> stepCounts = new ArrayList<>();
 
         numbers.stream().forEach(number -> {
-            Collatz collatz = create(number);
-            List<Step> steps = getSteps(collatz);
+            final int COLLATZ_LIMIT = 1000000;
+            boolean isInbounds = !((long) number <= 0 || (long) number > COLLATZ_LIMIT);
+            Collatz collatz = new Collatz(isInbounds ? (long) number : 0);
+
+            long input = collatz.number;
+            List<Step> steps1 = new ArrayList<>();
+            while (input > 1) {
+                Step step = Step.create(input);
+                steps1.add(step);
+                input = step.run();
+            }
+            List<Step> steps = steps1;
             long sequenceCount = steps.size();
             stepCounts.add(new StepCount(number, sequenceCount));
         });
@@ -22,23 +32,6 @@ public class CollatzSequence {
                 .max(Comparator.comparing(StepCount::getStepCount))
                 .orElseThrow(NoSuchElementException::new);
         return stepCount.getNumber();
-    }
-
-    public static Collatz create(long number) {
-        final int COLLATZ_LIMIT = 1000000;
-        boolean isInbounds = !(number <= 0 || number > COLLATZ_LIMIT);
-        return new Collatz(isInbounds ? number : 0);
-    }
-
-    public static List<Step> getSteps(Collatz collatz) {
-        long input = collatz.number;
-        List<Step> steps = new ArrayList<>();
-        while (input > 1) {
-            Step step = Step.create(input);
-            steps.add(step);
-            input = step.run();
-        }
-        return steps;
     }
 
     static class StepCount {
