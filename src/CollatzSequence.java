@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 
 public class CollatzSequence {
 
-    public int getNumberWithMostSteps(List<Integer> numbers) {
+    public long getNumberWithMostSteps(List<Integer> numbers) {
         return getMaxStepCount(getSequenceCounts(numbers)).getNumber();
     }
 
