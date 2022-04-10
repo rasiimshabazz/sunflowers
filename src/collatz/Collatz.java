@@ -21,7 +21,7 @@ public class Collatz {
         long input = this.number;
         List<Step> steps = new ArrayList<>();
         while (input > 1) {
-            Step step = StepFactory.create(input);
+            Step step = Step.create(input);
             steps.add(step);
             input = step.run();
         }
