@@ -1,11 +1,11 @@
-Good morning! Here's your coding interview problem for today.
 
-This problem was asked by Apple.
+A Collatz sequence in mathematics can be defined as follows. Starting with any positive integer:
 
-A Collatz step in mathematics can be defined as follows. Starting with any positive integer:
+if n is even, the next number in the sequence is the result of the step: n / 2
+if n is odd, the next number in the sequence is the result of the step:  3n + 1
+It is conjectured that every such sequence eventually reaches the number 1.
 
-if n is even, the next number in the step is n / 2
-if n is odd, the next number in the step is 3n + 1
-It is conjectured that every such step eventually reaches the number 1. Test this conjecture.
+Test this conjecture.
 
 Bonus: What input n <= 1000000 gives the longest step?
+
