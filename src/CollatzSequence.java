@@ -14,10 +14,8 @@ public class CollatzSequence {
 
         numbers.stream().forEach(number -> {
             final int COLLATZ_LIMIT = 1000000;
-            boolean isInbounds = !((long) number <= 0 || (long) number > COLLATZ_LIMIT);
-            Collatz collatz = new Collatz(isInbounds ? (long) number : 0);
 
-            long input = collatz.number;
+            long input = !((long) number <= 0 || (long) number > COLLATZ_LIMIT) ? (long) number : 0;
             List<Step> steps1 = new ArrayList<>();
             while (input > 1) {
                 Step step;
@@ -47,13 +45,5 @@ public class CollatzSequence {
         }
     }
 
-    static class Collatz {
 
-        public final long number;
-
-        public Collatz(long number) {
-            this.number = number;
-        }
-
-    }
 }
