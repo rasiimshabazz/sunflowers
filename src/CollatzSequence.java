@@ -22,7 +22,7 @@ public class CollatzSequence {
     private static List<StepCount> getSequenceCounts(List<Integer> numbers) {
         List<StepCount> stepCounts = new ArrayList<>();
         numbers.stream().forEach(number -> {
-            int sequenceCount = CollatzCreator.create(number).getSteps().size();
+            long sequenceCount = CollatzCreator.create(number).getSteps().size();
             stepCounts.add(new StepCount(number, sequenceCount));
         });
         return stepCounts;
