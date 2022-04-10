@@ -11,18 +11,17 @@ public class CollatzSequence {
         numbers.stream().forEach(number -> {
 
             long input = !((long) number <= 0 || (long) number > 1000000) ? (long) number : 0;
-            List<Step> steps1 = new ArrayList<>();
+            int count = 0;
             while (input > 1) {
                 if (input % 2 == 0) {
-                    steps1.add(new Step());
                     input = input / 2;
                 }
                 else {
-                    steps1.add(new Step());
                     input = (3 * input) + 1;
                 }
+                count++;
             }
-            stepCounts.add(new StepCount(number, steps1.size()));
+            stepCounts.add(new StepCount(number, count));
         });
 
         StepCount stepCount = stepCounts.stream()
@@ -40,7 +39,5 @@ public class CollatzSequence {
             this.stepCount = stepCount;
         }
     }
-
-    static class Step { }
 
 }
