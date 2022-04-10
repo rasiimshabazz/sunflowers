@@ -1,4 +1,6 @@
 import collatz.Collatz;
+import collatz.EvenStep;
+import collatz.OddStep;
 import collatz.Step;
 
 import java.util.ArrayList;
@@ -19,7 +21,9 @@ public class CollatzSequence {
             long input = collatz.number;
             List<Step> steps1 = new ArrayList<>();
             while (input > 1) {
-                Step step = Step.create(input);
+                Step step;
+                if (input % 2 == 0) step = new EvenStep(input);
+                else step = new OddStep(input);
                 steps1.add(step);
                 input = step.run();
             }
