@@ -2,12 +2,12 @@ package collatz;
 
 public class EvenStep extends Step {
 
-    public EvenStep(int number) {
+    public EvenStep(long number) {
         super(number);
     }
 
     @Override
-    public int run() {
+    public long run() {
         return this.number / 2;
     }
 

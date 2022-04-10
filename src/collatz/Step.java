@@ -2,12 +2,12 @@ package collatz;
 
 public abstract class Step {
 
-    int number;
+    long number;
 
-    Step(int number) {
+    Step(long number) {
         this.number = number;
     }
 
-    public abstract int run();
+    public abstract long run();
 
 }

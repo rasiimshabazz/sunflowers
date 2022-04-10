@@ -2,12 +2,12 @@ package collatz;
 
 public class OddStep extends Step {
 
-    public OddStep(int number) {
+    public OddStep(long number) {
         super(number);
     }
 
     @Override
-    public int run() {
+    public long run() {
         return (3 * this.number) + 1;
     }
 

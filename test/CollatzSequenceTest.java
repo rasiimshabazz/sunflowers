@@ -12,8 +12,7 @@ public class CollatzSequenceTest {
     @Test
     void run() {
         assertEquals(3, CollatzSequence.getNumberWithMostSteps(Arrays.asList(1, 2, 3)));
-        assertEquals(910107, CollatzSequence.getNumberWithMostSteps(allNumbersUpToAMillion()));
-        //assertEquals(837799, ... https://www.google.com/search?q=910107+collatz
+        assertEquals(837799, CollatzSequence.getNumberWithMostSteps(allNumbersUpToAMillion()));
     }
 
     private List<Integer> allNumbersUpToAMillion() {
