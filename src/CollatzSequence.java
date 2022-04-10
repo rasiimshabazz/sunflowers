@@ -13,12 +13,8 @@ public class CollatzSequence {
             long input = !((long) number <= 0 || (long) number > 1000000) ? (long) number : 0;
             int count = 0;
             while (input > 1) {
-                if (input % 2 == 0) {
-                    input = input / 2;
-                }
-                else {
-                    input = (3 * input) + 1;
-                }
+                if (input % 2 == 0) input = input / 2;
+                else input = (3 * input) + 1;
                 count++;
             }
             stepCounts.add(new StepCount(number, count));
