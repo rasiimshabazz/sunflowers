@@ -12,7 +12,7 @@ public class CollatzSequence {
         List<StepCount> stepCounts = new ArrayList<>();
         numbers.stream().forEach(number -> {
             Collatz collatz = Collatz.create(number);
-            List<Step> steps = collatz.getSteps();
+            List<Step> steps = Collatz.getSteps(collatz);
             long sequenceCount = steps.size();
             stepCounts.add(new StepCount(number, sequenceCount));
         });

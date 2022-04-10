@@ -17,8 +17,8 @@ public class Collatz {
         return new Collatz(isInbounds ? number : 0);
     }
 
-    public List<Step> getSteps() {
-        long input = this.number;
+    public static List<Step> getSteps(Collatz collatz) {
+        long input = collatz.number;
         List<Step> steps = new ArrayList<>();
         while (input > 1) {
             Step step = Step.create(input);
