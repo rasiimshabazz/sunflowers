@@ -1,6 +1,6 @@
 package collatz;
 
-class StepCount {
+public class StepCount {
     private int number;
     private int stepCount;
 

@@ -1,11 +1,12 @@
-package collatz;
+import collatz.CollatzCreator;
+import collatz.StepCount;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class StepCounter_Main {
+public class CollatzSequence {
 
     public int getNumberWithMostSteps(List<Integer> numbers) {
         return getMaxStepCount(getSequenceCounts(numbers)).getNumber();
