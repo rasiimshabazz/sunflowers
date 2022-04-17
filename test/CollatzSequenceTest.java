@@ -13,7 +13,7 @@ public class CollatzSequenceTest {
     void getNumberWithMostSteps() {
         List<Integer> numbers = Arrays.stream(IntStream.range(1, 1000000).toArray())
                 .boxed().collect(Collectors.toList());
-        assertEquals(837799, CollatzSequence.getNumberWithMostSteps(numbers));
+        assertEquals(837799, CollatzSequence.calc(numbers));
     }
 
 }

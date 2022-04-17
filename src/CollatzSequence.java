@@ -4,10 +4,10 @@ import java.util.Map;
 
 public class CollatzSequence {
 
-    public static long getNumberWithMostSteps(List<Integer> numbers) {
-        HashMap<Long, Long> numbersAndCounts = new HashMap<>();
-        for (Integer number : numbers) {
-            long input = !((long) number <= 0 || (long) number > 1000000) ? (long) number : 0;
+    public static long calc(List<Integer> nums) {
+        HashMap<Long, Long> numsMap = new HashMap<>();
+        for (Integer n : nums) {
+            long input = !((long) n <= 0 || (long) n > 1000000) ? (long) n : 0;
             long count = 0;
             while (input > 1) {
                 if (input % 2 == 0) {
@@ -18,15 +18,15 @@ public class CollatzSequence {
                 }
                 count++;
             }
-            numbersAndCounts.put(Long.valueOf(number), count);
+            numsMap.put(Long.valueOf(n), count);
         }
-        Map.Entry<Long, Long> maxCountByNumber = null;
-        for (Map.Entry<Long, Long> entry : ((Map<Long, Long>) numbersAndCounts).entrySet()) {
-            if (maxCountByNumber == null || entry.getValue().compareTo(maxCountByNumber.getValue()) > 0) {
-                maxCountByNumber = entry;
+        Map.Entry<Long, Long> count = null;
+        for (Map.Entry<Long, Long> entry : ((Map<Long, Long>) numsMap).entrySet()) {
+            if (count == null || entry.getValue().compareTo(count.getValue()) > 0) {
+                count = entry;
             }
         }
-        return maxCountByNumber.getKey();
+        return count.getKey();
     }
 
 
