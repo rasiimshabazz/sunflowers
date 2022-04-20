@@ -10,4 +10,4 @@ It's conjectured that every such sequence of steps should eventually reach the n
 
 1. Write a program that proves that conjecture.
 
-2. What input n <= 1000000 gives the longest step?
+2. What input n <= 1000000 produces the longest sequence?
