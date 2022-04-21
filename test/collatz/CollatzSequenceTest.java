@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CollatzSequenceTest {
 
     @Test
-    void run() {
+    void getNumberWithMostSteps() {
         assertEquals(3, CollatzSequence.getNumberWithMostSteps(Arrays.asList(1, 2, 3)));
         assertEquals(837799, CollatzSequence.getNumberWithMostSteps(allNumbersUpToAMillion()));
     }
