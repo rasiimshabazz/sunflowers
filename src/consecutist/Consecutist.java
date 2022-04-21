@@ -15,21 +15,18 @@ public class Consecutist {
     public static List<String> collectSegmentsOfRepeats(String word) {
         List<String> segments = new ArrayList<>();
         String[] letters = word.split("");
-
         String segment = "";
-        String letterFromPreviousIteration = "";
+        String previousIterationLetter = "";
         for (int i = 0; i < letters.length; i++) {
-
             String letter = letters[i];
-            if (!letter.equalsIgnoreCase(letterFromPreviousIteration) && !letterFromPreviousIteration.isEmpty()) {
+            if (!letter.equalsIgnoreCase(previousIterationLetter) && !previousIterationLetter.isEmpty()) {
                 segments.add(segment);
                 segment = "";
             }
             segment = segment.concat(letter);
-            letterFromPreviousIteration = letter;
+            previousIterationLetter = letter;
         }
         segments.add(segment);
-
         return segments;
     }
 }
