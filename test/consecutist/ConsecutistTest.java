@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ConsecutistTest {
 
     @Test
-    void pruneConsecutiveCharacters() {
+    void pruneConsecutiveCharacters_zero_returns_empty_string() {
         assertEquals("", Consecutist.pruneConsecutiveCharacters("hello", 0));
     }
 }
