@@ -1,13 +1,21 @@
 package consecutist;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Consecutist {
 
-    static String pruneConsecutiveCharacters(String input, int maxConsecutiveChars) {
+    static String pruneConsecutiveCharacters(String word, int maxConsecutiveChars) {
         if (maxConsecutiveChars == 0) return "";
-        return input;
+
+
+
+        return word;
+    }
+
+    public static List<String> collectRepeats(String word) {
+        List<String> repeats = new ArrayList<>();
+
+        return  Arrays.asList("h", "e", "ll", "ooo", "l");
     }
 
     public static Map<Character, Integer> countLetters(String word) {
@@ -21,4 +29,5 @@ public class Consecutist {
         }
         return lettersCounts;
     }
+
 }

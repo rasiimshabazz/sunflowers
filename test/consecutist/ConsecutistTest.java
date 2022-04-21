@@ -2,8 +2,7 @@ package consecutist;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,12 +14,19 @@ class ConsecutistTest {
     }
 
     @Test
+    void collectRepeats() {
+        List<String> repeats = Arrays.asList("h", "e", "ll", "ooo", "l");
+        assertEquals(repeats, Consecutist.collectRepeats("helloool"));
+    }
+
+    @Test
     void countLetters() {
         Map<Character, Integer> lettersCounts = new HashMap<>();
         lettersCounts.put('h', 1);
         lettersCounts.put('e', 1);
-        lettersCounts.put('l', 2);
-        lettersCounts.put('o', 1);
-        assertEquals(lettersCounts, Consecutist.countLetters("hello"));
+        lettersCounts.put('l', 3);
+        lettersCounts.put('o', 3);
+        assertEquals(lettersCounts, Consecutist.countLetters("helloool"));
     }
+
 }
