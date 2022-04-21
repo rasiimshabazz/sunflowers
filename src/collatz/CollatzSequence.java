@@ -1,3 +1,5 @@
+package collatz;
+
 import collatz.CollatzCreator;
 import collatz.StepCount;
 
