@@ -14,9 +14,11 @@ class ConsecutistTest {
     }
 
     @Test
-    void collectRepeats() {
-        List<String> repeats = Arrays.asList("h", "e", "ll", "ooo", "l");
-        assertEquals(repeats, Consecutist.collectRepeats("helloool"));
+    void collectSegmentsOfRepeats() {
+        assertEquals(Arrays.asList("hhh", "e", "ll", "ooo", "ll"), Consecutist.collectSegmentsOfRepeats("hhhelloooll"));
+        assertEquals(Arrays.asList("h", "e", "ll", "ooo", "ll"), Consecutist.collectSegmentsOfRepeats("helloooll"));
+        assertEquals(Arrays.asList("h", "e", "ll", "ooo", "l"), Consecutist.collectSegmentsOfRepeats("helloool"));
+        assertEquals(Arrays.asList("aaa", "bbb", "cc", "aaaaaaa"), Consecutist.collectSegmentsOfRepeats("aaabbbccaaaaaaa"));
     }
 
     @Test

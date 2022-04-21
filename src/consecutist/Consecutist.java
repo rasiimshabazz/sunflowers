@@ -12,10 +12,25 @@ public class Consecutist {
         return word;
     }
 
-    public static List<String> collectRepeats(String word) {
-        List<String> repeats = new ArrayList<>();
+    public static List<String> collectSegmentsOfRepeats(String word) {
+        List<String> segments = new ArrayList<>();
+        String[] letters = word.split("");
 
-        return  Arrays.asList("h", "e", "ll", "ooo", "l");
+        String segment = "";
+        String letterFromPreviousIteration = "";
+        for (int i = 0; i < letters.length; i++) {
+
+            String letter = letters[i];
+            if (!letter.equalsIgnoreCase(letterFromPreviousIteration) && !letterFromPreviousIteration.isEmpty()) {
+                segments.add(segment);
+                segment = "";
+            }
+            segment = segment.concat(letter);
+            letterFromPreviousIteration = letter;
+        }
+        segments.add(segment);
+
+        return segments;
     }
 
     public static Map<Character, Integer> countLetters(String word) {
