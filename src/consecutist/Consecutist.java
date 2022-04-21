@@ -1,7 +1,7 @@
 package consecutist;
 
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Consecutist {
 
@@ -10,14 +10,15 @@ public class Consecutist {
         return input;
     }
 
-
-    public static Map<Character, Integer> countLetters(String hello, int i) {
-        List<Character> letters = new ArrayList(Arrays.asList(hello.toCharArray()));
+    public static Map<Character, Integer> countLetters(String word) {
+        char[] letters = word.toCharArray();
         Map<Character, Integer> lettersCounts = new HashMap<>();
-        letters.stream().forEach(letter -> {
-            int count = lettersCounts.get(letter);
-            lettersCounts.put(letter, count++);
-        });
+        for (int i = 0; i < letters.length; i++) {
+            char letter = letters[i];
+            Integer potentialCount = lettersCounts.get(letter);
+            int count = potentialCount == null ? 0 : potentialCount;
+            lettersCounts.put(letter, ++count);
+        }
         return lettersCounts;
     }
 }
