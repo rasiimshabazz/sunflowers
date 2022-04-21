@@ -2,12 +2,24 @@ package consecutist;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConsecutistTest {
 
     @Test
-    void pruneConsecutiveCharacters_zero_returns_empty_string() {
+    void pruneConsecutiveCharacters() {
         assertEquals("", Consecutist.pruneConsecutiveCharacters("hello", 0));
+    }
+
+    void countLetters() {
+        Map<Character, Integer> lettersCounts = new HashMap<>();
+        lettersCounts.put('h', 1);
+        lettersCounts.put('e', 1);
+        lettersCounts.put('l', 2);
+        lettersCounts.put('o', 1);
+        assertEquals(lettersCounts, Consecutist.countLetters("hello", 0));
     }
 }
