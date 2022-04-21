@@ -11,6 +11,7 @@ class ConsecutistTest {
     @Test
     void pruneConsecutiveCharacters() {
         assertEquals("", Consecutist.pruneConsecutiveCharacters("hello", 0));
+        assertEquals("abca", Consecutist.pruneConsecutiveCharacters("aaabbbccaaaaaaa", 1));
     }
 
     @Test

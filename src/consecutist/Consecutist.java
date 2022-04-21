@@ -1,15 +1,28 @@
 package consecutist;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Consecutist {
 
     static String pruneConsecutiveCharacters(String word, int maxConsecutiveChars) {
         if (maxConsecutiveChars == 0) return "";
 
+        List<String> segments = collectSegmentsOfRepeats(word);
 
+        List<String> truncatedSegments = segments.stream().map(segment -> {
+            if (maxConsecutiveChars > segment.length()) {
+                String substring = segment.substring(0, segment.length() - 1);
+                return substring;
+            }
+            String substring = segment.substring(0, maxConsecutiveChars);
+            return substring;
+        }).collect(Collectors.toList());
 
-        return word;
+        String collect = truncatedSegments.stream().map((segment -> segment)).collect(Collectors.joining(""));
+        return collect;
+
+//        return word;
     }
 
     public static List<String> collectSegmentsOfRepeats(String word) {
