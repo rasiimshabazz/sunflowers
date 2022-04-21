@@ -5,17 +5,12 @@ import java.util.stream.Collectors;
 
 public class Consecutist {
 
-    static String pruneConsecutiveCharacters(String letterSequnce, int maxConsecutiveChars) {
+    static String pruneConsecutiveCharacters(String letterSequence, int maxConsecutiveChars) {
         if (maxConsecutiveChars <= 0) return "";
-        List<String> segments = collectSegmentsOfRepeats(letterSequnce);
-        List<String> truncatedSegments = segments.stream().map(segment -> {
-            if (maxConsecutiveChars > segment.length()) {
-                String substring = segment.substring(0, segment.length());
-                return substring;
-            }
-            String substring = segment.substring(0, maxConsecutiveChars);
-            return substring;
-        }).collect(Collectors.toList());
+        List<String> segments = collectSegmentsOfRepeats(letterSequence);
+        List<String> truncatedSegments = segments.stream()
+                .map(segment -> segment.length() > maxConsecutiveChars ? segment.substring(0, maxConsecutiveChars) : segment)
+                .collect(Collectors.toList());
         return truncatedSegments.stream().collect(Collectors.joining());
     }
 
