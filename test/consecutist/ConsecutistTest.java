@@ -21,14 +21,4 @@ class ConsecutistTest {
         assertEquals(Arrays.asList("aaa", "bbb", "cc", "aaaaaaa"), Consecutist.collectSegmentsOfRepeats("aaabbbccaaaaaaa"));
     }
 
-    @Test
-    void countLetters() {
-        Map<Character, Integer> lettersCounts = new HashMap<>();
-        lettersCounts.put('h', 1);
-        lettersCounts.put('e', 1);
-        lettersCounts.put('l', 3);
-        lettersCounts.put('o', 3);
-        assertEquals(lettersCounts, Consecutist.countLetters("helloool"));
-    }
-
 }
