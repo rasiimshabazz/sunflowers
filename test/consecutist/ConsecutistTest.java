@@ -11,9 +11,16 @@ class ConsecutistTest {
     @Test
     void pruneConsecutiveCharacters() {
         assertEquals("", Consecutist.pruneConsecutiveCharacters("hello", 0));
+        assertEquals("", Consecutist.pruneConsecutiveCharacters("hhhelloooll", 0));
         assertEquals("abca", Consecutist.pruneConsecutiveCharacters("aaabbbccaaaaaaa", 1));
         assertEquals("aabbcc", Consecutist.pruneConsecutiveCharacters("aaabbbcc", 2));
         assertEquals("abbcc", Consecutist.pruneConsecutiveCharacters("abbbccc", 2));
+        assertEquals("helol", Consecutist.pruneConsecutiveCharacters("helloooll", 1));
+        assertEquals("hellool", Consecutist.pruneConsecutiveCharacters("helloool", 2));
+        assertEquals("aabbccaa", Consecutist.pruneConsecutiveCharacters("aaabbbccaaaaaaa", 2));
+        assertEquals("aaabbbccaaa", Consecutist.pruneConsecutiveCharacters("aaabbbccaaaaaaa", 3));
+        assertEquals("aaabbbccaaaaaaa", Consecutist.pruneConsecutiveCharacters("aaabbbccaaaaaaa", 1111111));
+        assertEquals("", Consecutist.pruneConsecutiveCharacters("aaabbbccaaaaaaa", -1));
     }
 
     @Test

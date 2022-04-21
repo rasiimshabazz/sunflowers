@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Consecutist {
 
     static String pruneConsecutiveCharacters(String letterSequnce, int maxConsecutiveChars) {
-        if (maxConsecutiveChars == 0) return "";
+        if (maxConsecutiveChars <= 0) return "";
         List<String> segments = collectSegmentsOfRepeats(letterSequnce);
         List<String> truncatedSegments = segments.stream().map(segment -> {
             if (maxConsecutiveChars > segment.length()) {
