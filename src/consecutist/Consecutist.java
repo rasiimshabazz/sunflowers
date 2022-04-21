@@ -10,9 +10,11 @@ public class Consecutist {
         List<String> segments = collectSegmentsOfRepeats(letterSequnce);
         List<String> truncatedSegments = segments.stream().map(segment -> {
             if (maxConsecutiveChars > segment.length()) {
-                return segment.substring(0, segment.length() - 1);
+                String substring = segment.substring(0, segment.length());
+                return substring;
             }
-            return segment.substring(0, maxConsecutiveChars);
+            String substring = segment.substring(0, maxConsecutiveChars);
+            return substring;
         }).collect(Collectors.toList());
         return truncatedSegments.stream().collect(Collectors.joining());
     }
