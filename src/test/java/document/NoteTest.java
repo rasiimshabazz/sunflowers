@@ -8,21 +8,21 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 class NoteTest {
 
     @Test
-    void isFormable_blanks() {
+    void isFormableFrom_blanks() {
         assertTrue(new Note("").isFormableFrom(""));
         assertFalse(new Note("any text").isFormableFrom(""));
         assertTrue(new Note("").isFormableFrom("any document"));
     }
 
     @Test
-    void isFormable_nulls() {
+    void isFormableFrom_nulls() {
         assertTrue(new Note(null).isFormableFrom(null));
         assertFalse(new Note("any text").isFormableFrom(null));
         assertTrue(new Note(null).isFormableFrom("any document"));
     }
 
     @Test
-    void isFormable() {
+    void isFormable_trues() {
         assertTrue(new Note("scary note").isFormableFrom("a bunch of text from today's newspaper"));
         assertTrue(new Note("abc").isFormableFrom("ann bob cat"));
         assertTrue(new Note("abc abc").isFormableFrom("cann bob cat"));
@@ -30,12 +30,12 @@ class NoteTest {
     }
 
     @Test
-    void isFormable_case() {
+    void isFormableFrom_case_insensitive() {
         assertTrue(new Note("SCARY NOTE").isFormableFrom("a bunch of text from today's newspaper"));
     }
 
     @Test
-    void isFormable_false() {
+    void isFormableFrom_falses() {
         assertFalse(new Note("even scarier note").isFormableFrom("a bunch of text from today's newspaper"));
         assertFalse(new Note("abc abc").isFormableFrom("abc "));
         assertFalse(new Note("abc abc").isFormableFrom("ann bob cat"));
