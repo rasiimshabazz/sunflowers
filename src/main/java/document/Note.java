@@ -12,9 +12,10 @@ class Note {
     }
 
     boolean isFormableFrom(String document) {
-        if ((text.isEmpty()) && (document.isEmpty() || document == null)) return true;
-        if ((text.isEmpty()) || (document.isEmpty() || document == null)) return false;
+        if ((text.isEmpty())) return true;
+        if (document == null) document = "";
         document = document.toLowerCase(Locale.ROOT);
+
         for (int i = 0; i < this.text.length(); i++) {
             char character = this.text.charAt(i);
             if (documentContainsCharacter(document, character)) {

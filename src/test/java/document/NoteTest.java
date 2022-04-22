@@ -8,10 +8,17 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 class NoteTest {
 
     @Test
-    void isFormable_guards() {
+    void isFormable_blanks() {
         assertTrue(new Note("").isFormableFrom(""));
         assertFalse(new Note("any text").isFormableFrom(""));
-        assertFalse(new Note("").isFormableFrom("any document"));
+        assertTrue(new Note("").isFormableFrom("any document"));
+    }
+
+    @Test
+    void isFormable_nulls() {
+        assertTrue(new Note(null).isFormableFrom(null));
+        assertFalse(new Note("any text").isFormableFrom(null));
+        assertTrue(new Note(null).isFormableFrom("any document"));
     }
 
     @Test
