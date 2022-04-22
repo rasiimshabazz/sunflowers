@@ -19,6 +19,7 @@ class NoteTest {
         assertTrue(new Note("scary note").isFormableFrom("a bunch of text from today's newspaper"));
         assertTrue(new Note("abc").isFormableFrom("ann bob cat"));
         assertTrue(new Note("abc abc").isFormableFrom("cann bob cat"));
+        assertTrue(new Note(" 7777777").isFormableFrom(" 77777 77"));
     }
 
     @Test
@@ -26,6 +27,8 @@ class NoteTest {
         assertFalse(new Note("even scarier note").isFormableFrom("a bunch of text from today's newspaper"));
         assertFalse(new Note("abc abc").isFormableFrom("abc "));
         assertFalse(new Note("abc abc").isFormableFrom("ann bob cat"));
+        assertFalse(new Note("z").isFormableFrom("a"));
+        assertFalse(new Note(" 7777777").isFormableFrom(" 777777"));
     }
 
 }
