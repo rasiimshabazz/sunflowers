@@ -1,9 +1,9 @@
 package document;
 
-public class Note {
+class Note {
 
-    boolean isFormable() {
+
+    boolean isFormable(String text, String document) {
         return true;
     }
-
 }
