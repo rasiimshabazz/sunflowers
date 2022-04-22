@@ -15,14 +15,12 @@ class Note {
         if ((text.isEmpty())) return true;
         if (document == null) document = "";
         document = document.toLowerCase(Locale.ROOT);
-
         for (int i = 0; i < this.text.length(); i++) {
             char character = this.text.charAt(i);
             if (documentContainsCharacter(document, character)) {
                 document = removeCharacterFromDocument(document, character);
             }
             else {
-                System.out.println(document);
                 return false;
             }
         }
@@ -37,5 +35,4 @@ class Note {
     private boolean documentContainsCharacter(String document, char character) {
         return document.indexOf(character) >= 0;
     }
-
 }
