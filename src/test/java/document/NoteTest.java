@@ -23,6 +23,11 @@ class NoteTest {
     }
 
     @Test
+    void isFormable_case() {
+        assertTrue(new Note("SCARY NOTE").isFormableFrom("a bunch of text from today's newspaper"));
+    }
+
+    @Test
     void isFormable_false() {
         assertFalse(new Note("even scarier note").isFormableFrom("a bunch of text from today's newspaper"));
         assertFalse(new Note("abc abc").isFormableFrom("abc "));

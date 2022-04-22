@@ -1,17 +1,20 @@
 package document;
 
+import java.util.Locale;
+
 class Note {
 
     private String text;
 
     Note(String text) {
         if (text == null) text = "";
-        this.text = text;
+        this.text = text.toLowerCase(Locale.ROOT);
     }
 
     boolean isFormableFrom(String document) {
         if ((text.isEmpty()) && (document.isEmpty() || document == null)) return true;
         if ((text.isEmpty()) || (document.isEmpty() || document == null)) return false;
+        document = document.toLowerCase(Locale.ROOT);
         for (int i = 0; i < this.text.length(); i++) {
             char character = this.text.charAt(i);
             if (documentContainsCharacter(document, character)) {
