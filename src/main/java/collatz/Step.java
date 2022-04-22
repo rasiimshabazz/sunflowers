@@ -1,6 +1,6 @@
 package collatz;
 
-public abstract class Step {
+abstract class Step {
 
     long number;
 
@@ -8,6 +8,6 @@ public abstract class Step {
         this.number = number;
     }
 
-    public abstract long run();
+    abstract long run();
 
 }

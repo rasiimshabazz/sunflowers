@@ -1,13 +1,13 @@
 package collatz;
 
-public class OddStep extends Step {
+class OddStep extends Step {
 
-    public OddStep(long number) {
+    OddStep(long number) {
         super(number);
     }
 
     @Override
-    public long run() {
+    long run() {
         return (3 * this.number) + 1;
     }
 

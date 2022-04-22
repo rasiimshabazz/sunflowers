@@ -3,7 +3,7 @@ package collatz;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Collatz {
+class Collatz {
 
     private final long number;
 
@@ -11,7 +11,7 @@ public class Collatz {
         this.number = number;
     }
 
-    public List<Step> getSteps() {
+    List<Step> getSteps() {
         long input = this.number;
         List<Step> steps = new ArrayList<>();
         while (input > 1) {

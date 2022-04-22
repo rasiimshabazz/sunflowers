@@ -3,7 +3,7 @@ package consecutist;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Consecutist {
+class Consecutist {
 
     static String pruneConsecutiveCharacters(String letterSequence, int maxConsecutiveChars) {
         if (maxConsecutiveChars <= 0) return "";
@@ -14,7 +14,7 @@ public class Consecutist {
         return truncatedSegments.stream().collect(Collectors.joining());
     }
 
-    public static List<String> collectSegmentsOfRepeats(String word) {
+    static List<String> collectSegmentsOfRepeats(String word) {
         List<String> segments = new ArrayList<>();
         String[] letters = word.split("");
         String segment = "";

@@ -8,9 +8,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class CollatzSequence {
+class CollatzSequence {
 
-    public static long getNumberWithMostSteps(List<Integer> numbers) {
+    static long getNumberWithMostSteps(List<Integer> numbers) {
         return getMaxStepCount(getSequenceCounts(numbers)).getNumber();
     }
 

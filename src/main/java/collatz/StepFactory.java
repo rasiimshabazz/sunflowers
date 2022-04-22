@@ -1,8 +1,8 @@
 package collatz;
 
-public class StepFactory {
+class StepFactory {
 
-    public static Step create(long number) {
+    static Step create(long number) {
         if (isEven(number)) return new EvenStep(number);
         else return new OddStep(number);
     }
