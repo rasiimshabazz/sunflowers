@@ -9,9 +9,9 @@ class NoteTest {
 
     @Test
     void isFormable() {
-        assertTrue(new Note().isFormable("", ""));
-        assertFalse(new Note().isFormable("any text", ""));
-        assertFalse(new Note().isFormable("", "any document"));
+        assertTrue(new Note("").isFormable(""));
+        assertFalse(new Note("any text").isFormable(""));
+        assertFalse(new Note("").isFormable("any document"));
     }
 
 }
