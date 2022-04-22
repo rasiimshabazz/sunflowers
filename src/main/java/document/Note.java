@@ -9,7 +9,7 @@ class Note {
         this.text = text;
     }
 
-    boolean isFormable(String document) {
+    boolean isFormableGiven(String document) {
         if ((text.isEmpty()) && (document.isEmpty() || document == null)) return true;
         if ((text.isEmpty()) || (document.isEmpty() || document == null)) return false;
 
