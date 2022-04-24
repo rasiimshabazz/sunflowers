@@ -17,22 +17,18 @@ class Note {
         document = document.toLowerCase(Locale.ROOT);
         for (int i = 0; i < this.text.length(); i++) {
             char character = this.text.charAt(i);
-            if (documentContainsCharacter(document, character)) {
-                document = removeCharacterFromDocument(document, character);
-            }
-            else {
-                return false;
-            }
+            if (documentExcludesCharacter(document, character)) return false;
+
+            document = removeCharacterFromDocument(character, document);
         }
         return true;
     }
 
-    private String removeCharacterFromDocument(String document, char character) {
-        document = document.replaceFirst("" + document.charAt(document.indexOf(character)), "" + Character.MIN_VALUE);
-        return document;
+    private String removeCharacterFromDocument(char character, String document) {
+        return document.replaceFirst("" + document.charAt(document.indexOf(character)), "" + Character.MIN_VALUE);
     }
 
-    private boolean documentContainsCharacter(String document, char character) {
-        return document.indexOf(character) >= 0;
+    private boolean documentExcludesCharacter(String document, char character) {
+        return document.indexOf(character) < 0;
     }
 }
