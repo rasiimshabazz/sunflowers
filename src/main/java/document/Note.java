@@ -31,7 +31,9 @@ class Note {
     }
 
     private String removeCharacterFromDocument(char character, String document) {
-        return document.replaceFirst("" + document.charAt(document.indexOf(character)), "" + Character.MIN_VALUE);
+        String text = String.valueOf(document.charAt(document.indexOf(character)));
+        String empty = String.valueOf(Character.MIN_VALUE);
+        return document.replaceFirst(text, empty);
     }
 
     private boolean documentExcludesCharacter(String document, char character) {
