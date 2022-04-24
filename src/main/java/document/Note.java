@@ -15,10 +15,16 @@ class Note {
         if ((text.isEmpty())) return true;
         if (document == null) document = "";
         document = document.toLowerCase(Locale.ROOT);
+
+        return documentContainsMyText(document);
+    }
+
+    private boolean documentContainsMyText(String document) {
         for (int i = 0; i < this.text.length(); i++) {
             char character = this.text.charAt(i);
-            if (documentExcludesCharacter(document, character)) return false;
-
+            if (documentExcludesCharacter(document, character)) {
+                return false;
+            }
             document = removeCharacterFromDocument(character, document);
         }
         return true;
